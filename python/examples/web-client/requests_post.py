@@ -12,7 +12,7 @@ payload = '''
 </soapenv:Envelope>
 '''
 
-res = requests.post('http://httpbin.org/post',
+res = requests.post('https://httpbin.org/post',
     headers = {
         'User-agent'  : 'Internet Explorer/2.0',
         'SOAPAction'  : 'http://www.corp.net/some/path/CustMsagDown.Check',
@@ -22,4 +22,3 @@ res = requests.post('http://httpbin.org/post',
 )
 print(res.headers['content-type'])
 print(res.text)
-

@@ -6,7 +6,7 @@ import yaml
 true_values = ["T", "t", "True", "TRUE", "true", "1"]
 false_values = ["F", "f", "False", "FALSE", "false", "0"]
 with open("quiz.yml") as fh:
-    data = yaml.load(fh, Loader=yaml.Loader)
+    data = yaml.safe_load(fh)
 chapters = data['chapters']
 
 
@@ -50,4 +50,3 @@ def main():
             print(f"wrong, choose only from 1-{len(chapters)} or x")
 
 main()
-
