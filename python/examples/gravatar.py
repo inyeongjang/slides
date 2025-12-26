@@ -3,7 +3,7 @@ import sys
 
 
 def gravatar(email):
-    return hashlib.md5(email.strip().lower().encode('utf8')).hexdigest()
+    return hashlib.sha256(email.strip().lower().encode('utf8')).hexdigest()
 
 if len(sys.argv) != 2:
     exit(f"Usage: {sys.argv[0]} EMAIL")
@@ -11,4 +11,3 @@ if len(sys.argv) != 2:
 email = sys.argv[1]
 code = gravatar(email)
 print(f"https://www.gravatar.com/avatar/{code}?s=100&d=blank")
-
