@@ -1,6 +1,6 @@
 import requests
 
-res = requests.get('http://httpbin.org/headers',
+res = requests.get('https://httpbin.org/headers',
         headers = {
             'User-agent'  : 'Internet Explorer/2.0',
             'SOAPAction'  : 'http://www.corp.net/some/path/CustMsagDown.Check',
@@ -19,4 +19,3 @@ print(res.text)
 #     "User-Agent": "Internet Explorer/2.0"
 #   }
 # }
-

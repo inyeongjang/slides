@@ -209,7 +209,10 @@ def generate_index(ext):
         courses.append(info)
     with open(os.path.join(html_dir, 'index.yaml'), 'w') as fh:
         fh.write(yaml.dump(courses, default_flow_style=False))
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_dir))
+    env = jinja2.Environment(
+        loader=jinja2.FileSystemLoader(templates_dir),
+        autoescape=jinja2.select_autoescape(['html', 'xml'])
+    )
     template = env.get_template('main.html')
     total = sum(map(lambda x: x['cnt'], courses))
     html = template.render(
@@ -236,5 +239,3 @@ def copy_static_files():
 
 
 main()
-
-
