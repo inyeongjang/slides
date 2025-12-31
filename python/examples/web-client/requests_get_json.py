@@ -1,6 +1,6 @@
 import requests
 
-res = requests.get('http://httpbin.org/ip')
+res = requests.get('https://httpbin.org/ip')
 print(res.headers['content-type'])
 print(res.text)
 print()

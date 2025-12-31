@@ -30,4 +30,4 @@ def user_page_central():
 
 @app.route('/user/<name>')
 def user_page(name):
-    return f'Page of {name}'
+    return f'Page of {name}'  # @BUG_HERE

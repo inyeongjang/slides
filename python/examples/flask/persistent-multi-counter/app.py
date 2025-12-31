@@ -41,6 +41,6 @@ def count(name):
     with open(counter_file, 'w') as fh:
         json.dump(counter, fh)
 
-    return f'<a href="/">home</a> {name}: {counter[name]}'
+    return f'<a href="/">home</a> {name}: {counter[name]}'  # @BUG_HERE
 
 

@@ -11,7 +11,7 @@ if len(sys.argv) > 2:
 counter = {}
 if os.path.exists(filename):
     with open(filename) as fh:
-        counter = yaml.load(fh, Loader=yaml.Loader)
+        counter = yaml.safe_load(fh)  # Use safe_load instead of load with Loader
 
 
 
@@ -32,4 +32,3 @@ print(counter[name])
 
 with open(filename, 'w') as fh:
     yaml.dump(counter, fh, Dumper=yaml.Dumper)
-

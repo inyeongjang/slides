@@ -15,6 +15,6 @@ def main():
 def echo():
     user_text = request.form.get('text', '')
     if user_text:
-        return "You said: " + user_text
+        return "You said: " + user_text  # @BUG_HERE
     return "Nothing to say?"
 

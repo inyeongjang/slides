@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template_string
 eapp = Flask(__name__)
 
 @eapp.route("/")
@@ -14,7 +14,7 @@ def hello():
 def echo():
     answer = request.args.get('text')
     if answer:
-        return "You said: " + answer
+        return render_template_string("You said: {{ answer }}", answer=answer)
     else:
         return "Nothing to say?"
 

@@ -18,7 +18,7 @@ def register():
     email = request.form.get('email')
     code = str(random.random())
     if db_save(email, code):
-        html = '<a href="/verify/{email}/{code}">here</a>'.format(email=email, code = code)
+        html = '<a href="/verify/{email}/{code}">here</a>'.format(email=email, code = code)  # @BUG_HERE
         sendmail({'to': email, 'subject': 'Registration', 'html': html })
         return 'OK'
     else:

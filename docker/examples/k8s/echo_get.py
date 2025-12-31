@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template_string
 app = Flask(__name__)
 
 VERSION = "1.00"
@@ -15,4 +15,5 @@ def main():
 
 @app.route("/echo")
 def echo():
-    return "You said: " + request.args.get('text', '')
+    user_input = request.args.get('text', '')
+    return render_template_string("You said: {{ user_input }}", user_input=user_input)

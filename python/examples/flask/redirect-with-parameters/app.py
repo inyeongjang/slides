@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template_string
 
 app = Flask(__name__)
 
@@ -22,4 +22,4 @@ def user_page_central():
 
 @app.route('/user/<name>')
 def user_page(name):
-    return f'Page of {name}'
+    return render_template_string('Page of {{ name }}', name=name)
